@@ -68,6 +68,9 @@ module.exports = {
             template: path.resolve(__dirname, 'public/index.html'),
             filename: 'index.html'
         }),
+        new AddAssetsHtmlWebpackPlugin({//必须跟在htmlwebpackplugin之后
+            filepath: path.resolve(__dirname, 'dll/react.dll.js')
+        }),
         new CleanWebpackPlugin(),
         new webpack.ProvidePlugin({//webpack自带的设置模块变量的plugin 但不能设置到window上，要设置到window需要用到expose-loader
             //把juqery模块 给每个模块都提供了一个$变量

@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const path = reuire('path')
+const path = require('path')
 
 module.exports = {
     mode: 'development',
@@ -13,7 +13,7 @@ module.exports = {
         path: require('path').resolve(__dirname, 'dll')
     },
     plugins: [
-        new webpack.DllPlugin({
+        new webpack.DllPlugin({ //进行分包 提升构建效率 不能喝splitChunks共存
             name: 'react',
             path: path.resolve(__dirname,'dll/manifest.json')
         })
